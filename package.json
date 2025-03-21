@@ -1,0 +1,53 @@
+{
+  "name": "webpack-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "addBranch": "git branch gh-pages",
+    "merge": "git checkout gh-pages && git merge main --no-edit",
+    "addDist": "git add dist -f && git commit -m 'Deployment commit'",
+    "pushDist": "git subtree push --prefix dist origin gh-pages",
+    "checkoutMain": "git checkout main",
+    "deploy": "npm-run-all --serial addBranch merge build addDist pushDist checkoutMain",
+    "prepare": "husky",
+    "lint": "eslint ./src",
+    "prettier:write": "prettier . --write",
+    "prettier:check": "prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilocasim/webpack-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilocasim/webpack-template/issues"
+  },
+  "homepage": "https://github.com/danilocasim/webpack-template#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "@eslint/js": "^9.20.0",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.20.0",
+    "globals": "^15.14.0",
+    "html-webpack-plugin": "^5.6.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "npm-run-all": "^4.1.5",
+    "prettier": "3.5.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0",
+    "webpack-merge": "^6.0.1"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
