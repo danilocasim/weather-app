@@ -60,6 +60,7 @@ form img {
   place-content: center;
   place-items: center;
   gap: 3rem;
+  text-align: center;
 }
 
 .humidity-wind-wrapper {
