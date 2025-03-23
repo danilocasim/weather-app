@@ -3,10 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webpack Template</title>
+    <title>Weathering With You</title>
   </head>
 
   <body>
-    <h1>Webpack Template</h1>
+    <div class="container">
+      <h1>Weathering with you</h1>
+      <div class="search-container">
+        <form>
+          <button type="button" id="weatherType" value="metric">°C</button>
+
+          <input
+            type="text"
+            id="searchLocation"
+            name="location"
+            placeholder="Search City"
+          />
+
+          <img
+            src="../assets/images/search.png"
+            id="submitLocation"
+            alt="submit"
+          />
+        </form>
+      </div>
+    </div>
   </body>
 </html>

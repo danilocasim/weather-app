@@ -1,1 +1,80 @@
 @import "./reset.css";
+
+.container {
+  color: #fff;
+  background-image: url("../assets/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 3rem;
+}
+
+#weatherType {
+  width: 2.5rem;
+  height: 2.2rem;
+  border-radius: 15px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+form input {
+  width: 250px;
+  height: 35px;
+  appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: white;
+}
+
+form input:focus {
+  outline: 2px solid black;
+}
+
+form img {
+  width: 2.5rem;
+  height: auto;
+  cursor: pointer;
+}
+
+.content {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  gap: 3rem;
+}
+
+.humidity-wind-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.humidity-icon,
+.wind-speed-icon {
+  width: 2.5rem;
+  height: auto;
+}
+
+.humidity-container,
+.wind-speed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
