@@ -1,5 +1,6 @@
 import humidityImage from "../assets/images/humidity.png";
 import windSpeedImage from "../assets/images/windspeed.png";
+import loaderGif from "../assets/images/loader.gif";
 
 export function errorText(data) {
   const allContainer = document.querySelectorAll(".content");
@@ -27,8 +28,9 @@ export function loader() {
   const content = document.createElement("div");
   content.classList.add("content");
 
-  const loader = document.createElement("h1");
-  loader.textContent = "Loading...";
+  const loader = document.createElement("img");
+  loader.classList.add("loader");
+  loader.src = loaderGif;
 
   content.appendChild(loader);
 

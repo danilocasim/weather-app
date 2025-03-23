@@ -10,12 +10,12 @@ export class Listeners {
     this.#btnSubmitLocation.addEventListener("click", async () => {
       const location = document.querySelector("#searchLocation");
 
+      loader();
+
       const weatherData = await getWeatherData(
         location.value,
         this.#btnToggleWeatherType.value,
       );
-
-      loader();
 
       if (weatherData === 400) {
         errorText(weatherData);
@@ -31,12 +31,13 @@ export class Listeners {
       const location = document.querySelector("#searchLocation");
 
       toggle();
+
+      loader();
+
       const weatherData = await getWeatherData(
         location.value,
         this.#btnToggleWeatherType.value,
       );
-
-      loader();
 
       if (weatherData === 400) {
         errorText(weatherData);

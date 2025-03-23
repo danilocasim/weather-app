@@ -50,6 +50,11 @@ form img {
   cursor: pointer;
 }
 
+.loader {
+  width: 3rem;
+  height: auto;
+}
+
 .content {
   display: grid;
   place-content: center;
