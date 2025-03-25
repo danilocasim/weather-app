@@ -5,6 +5,13 @@ import { renderWeatherData, errorText, loader } from "./dom";
 export class Listeners {
   static #btnToggleWeatherType = document.querySelector("#weatherType");
   static #btnSubmitLocation = document.querySelector("#submitLocation");
+  static #form = document.querySelector("form");
+
+  static #preventDefaultForm() {
+    this.#form.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+  }
 
   static #submitLocation() {
     this.#btnSubmitLocation.addEventListener("click", async () => {
@@ -49,6 +56,7 @@ export class Listeners {
   }
 
   static runAll() {
+    this.#preventDefaultForm();
     this.#submitLocation();
     this.#toggleWeatherType();
   }
